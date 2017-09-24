@@ -4,16 +4,23 @@
 **Tags:**  `crypto`
 
 By reading [encrypt.py][encrypt] we can identify what input becomes an output.
+
 Actually [encrypt.py][encrypt] takes through Image.getdata() a linear list of every pixel on image. 
+
 **Ex:** `[(97,98,99),(254,52,63),(562,85,45),......]`
 In `data_encrypted()` each pixel is transformed in a 3-ascii letter word.
+
 **Ex:** `(97,98,99) => 'abc'`
 Then in `encryption()` an input of 'abc' will give up an 8-tuple of 8-char hex number.
 According to [encrypted.txt][encrypted] each "8-tuple of 8-char hex number" are repeting itself wich that means it's probably the same pixel each time.
+
 **Ex:** `['709e80c8','8487a241','1e1ee4df','b9f22a86','1492d20c','4765150c','0c794abd','0f81477c']`
 Exploit should be to use this regularity to determine the more current pixel as the background of our solution and others pixels as the flag text.
+
 Using python we can count how many "8-tuple of 8-char hex number" (pixels) there is and try each format (height, widht) with height between 1 to 100 (because of letter size).
+
 (Note that if you try to encrypt images you can see that encryption is creating a huge amount of data which means flag must be very tiny image.) 
+
 Here is the python [exploit.py][exploit] for more indications.
 
     from PIL import Image
