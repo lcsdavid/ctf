@@ -8,9 +8,11 @@ By reading [encrypt.py][encrypt] we can identify what input becomes an output.
 Actually [encrypt.py][encrypt] takes through Image.getdata() a linear list of every pixel on image. 
 
 **Ex:** `[(97,98,99),(254,52,63),(562,85,45),......]`
+
 In `data_encrypted()` each pixel is transformed in a 3-ascii letter word.
 
 **Ex:** `(97,98,99) => 'abc'`
+
 Then in `encryption()` an input of 'abc' will give up an 8-tuple of 8-char hex number.
 According to [encrypted.txt][encrypted] each "8-tuple of 8-char hex number" are repeting itself wich that means it's probably the same pixel each time.
 
