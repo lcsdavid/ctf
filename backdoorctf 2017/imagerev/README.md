@@ -26,39 +26,41 @@ Using python we can count how many "8-tuple of 8-char hex number" (pixels) there
 
 Here is the python [exploit.py][exploit] for more indications.
 
-    from PIL import Image
-    
-    def get_hex_list(filename):
-    	f = open(filename, 'r')
-    	crypted_data = f.read()
-    	word_list = list()
-    	data_list = list()
-    	count = 0
-    	while count < len(crypted_data):
-    		word_list.append(crypted_data[count:count+8])
-    		if len(word_list) == 8:
-    			data_list.append(word_list)
-    			word_list = list();
-    		count += 8
-    	return data_list
-    
-    def resolve(input_list):
-    	formated_list = list()
-    	for item in input_list:
-    		if item == input_list[0]:
-    			formated_list.append((0,0,0))
-    		else:
-    			formated_list.append((255,255,255))
-    	for i in range(1,100):
-    		if len(formated_list) % i == 0:
-    			size = (len(formated_list) / i, i)
-    			im = Image.new("RGB",size,"white")
-    			im.putdata(formated_list)
-    			title = './flag' + str(i) + '.png'
-    			im.save(title)
-    
-    hex_data_list = get_hex_list('./encrypted.txt')
-    resolve(hex_data_list)
+```python
+from PIL import Image
+
+def get_hex_list(filename):
+	f = open(filename, 'r')
+	crypted_data = f.read()
+	word_list = list()
+	data_list = list()
+	count = 0
+	while count < len(crypted_data):
+		word_list.append(crypted_data[count:count+8])
+		if len(word_list) == 8:
+			data_list.append(word_list)
+			word_list = list();
+		count += 8
+	return data_list
+
+def resolve(input_list):
+	formated_list = list()
+	for item in input_list:
+		if item == input_list[0]:
+			formated_list.append((0,0,0))
+		else:
+			formated_list.append((255,255,255))
+	for i in range(1,100):
+		if len(formated_list) % i == 0:
+			size = (len(formated_list) / i, i)
+			im = Image.new("RGB",size,"white")
+			im.putdata(formated_list)
+			title = './flag' + str(i) + '.png'
+			im.save(title)
+
+hex_data_list = get_hex_list('./encrypted.txt')
+resolve(hex_data_list)
+```
 
 [encrypt]:/backdoorctf%202017/imagerev/encrypt.py
 [encrypted]:/backdoorctf%202017/imagerev/encrypted.txt
