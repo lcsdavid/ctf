@@ -15,6 +15,7 @@ Then in `encryption()` an input of 'abc' will give up an 8-tuple of 8-char hex n
 According to [encrypted.txt][encrypted] each "8-tuple of 8-char hex number" are repeting itself wich that means it's probably the same pixel each time.
 
 **Ex:** `['709e80c8','8487a241','1e1ee4df','b9f22a86','1492d20c','4765150c','0c794abd','0f81477c']`
+
 Exploit should be to use this regularity to determine the more current pixel as the background of our solution and others pixels as the flag text.
 
 Using python we can count how many "8-tuple of 8-char hex number" (pixels) there is and try each format (height, widht) with height between 1 to 100 (because of letter size).
