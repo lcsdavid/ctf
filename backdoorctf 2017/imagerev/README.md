@@ -62,6 +62,14 @@ hex_data_list = get_hex_list('./encrypted.txt')
 resolve(hex_data_list)
 ```
 
+Final we get images like those (you just have to find the right one with the good ration [w:h]) :
+![9 pixel height flag generated](/backdoorctf%202017/imagerev/flag9.png)
+![81 pixel height flag generated](/backdoorctf%202017/imagerev/flag81.png)
+![91 pixel height flag generated](/backdoorctf%202017/imagerev/flag91.png)
+
+As [backdoor][backdoor_site] asked there is not the right flag here.
+
 [encrypt]:/backdoorctf%202017/imagerev/encrypt.py
 [encrypted]:/backdoorctf%202017/imagerev/encrypted.txt
 [exploit]:/backdoorctf%202017/imagerev/exploit.py
+[backdoor_site]:https://backdoor.sdslabs.co/
