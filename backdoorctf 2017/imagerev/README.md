@@ -50,6 +50,6 @@ Here is the python [exploit.py][exploit] for more indications.
     hex_data_list = get_hex_list('./encrypted.txt')
     resolve(hex_data_list)
 
-[encrypt]:/backdoorctf%20/2017/imagerev/encrypt.py
-[encrypted]:/backdoorctf%20/2017/imagerev/encrypted.txt
-[exploit]:/backdoorctf%20/2017/imagerev/exploit.py
+[encrypt]:/backdoorctf%202017/imagerev/encrypt.py
+[encrypted]:/backdoorctf%202017/imagerev/encrypted.txt
+[exploit]:/backdoorctf%202017/imagerev/exploit.py
