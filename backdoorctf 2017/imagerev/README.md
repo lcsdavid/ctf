@@ -1,7 +1,8 @@
 **CTF: backdoorctf 2017**
 --
 **Challenge:** `imagerev`
-**Tags:**  `crypto`
+**Tags:**  `crypto` 
+**Given files:** [encrypt.py][encrypt], [encrypted.txt][encrypted]
 
 By reading [encrypt.py][encrypt] we can identify what input becomes an output.
 
