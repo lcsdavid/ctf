@@ -1,0 +1,5 @@
+# exclude files within flag
+*.png
+!flag9.png
+!flag81.png
+!flag91.png
